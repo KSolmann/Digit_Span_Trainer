@@ -59,9 +59,10 @@ loop_nr = 0
 
 # Start the game
 print('Welcome to digit span!')
+print()
 
 # Ask for user's name
-name = input('Please enter your name: ')
+name = input('Please enter your name ---> ')
 os.system('cls')
 
 # Get current date
@@ -72,6 +73,7 @@ current_date = time.strftime("%d/%m/%Y")
 # Practice or testing mode, practice 1, test 2
 while True:
     print('Please choose mode:')
+    print()
     print('1. Practice')
     print('2. Test')
     mode = input('---> ')
@@ -83,8 +85,9 @@ os.system('cls')
 
 # how comfortable is the environment, 1 - not comfortable, 10 - very comfortable
 while True:
-    print('1 - NOT COMFORTABLE, 10 - VERY COMFORTABLE')
-    location = input('How comfortable is the environment right now?')
+    print('NOT COMFORTABLE  1-2-3-4-5-6-7-8-9-10    VERY COMFORTABLE')
+    print()
+    location = input('How comfortable is the environment right now? ---> ')
     if location in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
     else:
@@ -93,7 +96,8 @@ os.system('cls')
 
 # tiredness level, 1 - not tired, 10 - tired
 while True:
-    print('1 - NOT TIRED, 10 - VERY TIRED')
+    print('NOT TIRED  1-2-3-4-5-6-7-8-9-10    VERY TIRED')
+    print()
     tiredness = input('How tired are you right now?')
     if tiredness in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
@@ -103,8 +107,7 @@ os.system('cls')
 
 # physical activity minutes
 while True:
-    print('Enter your active minutes for today:')
-    physical_activity = input('How many activity minutes have you got today?')
+    physical_activity = input('Enter your active minutes for today ---> ')
     if physical_activity.isdigit():
         break
     else:
@@ -113,8 +116,9 @@ os.system('cls')
 
 # mental state, 1 - not focused, 10- focused
 while True:
-    print('1 - NOT FOCUSED, 10 - VERY FOCUSED')
-    mental_state = input('How focused are you right now?')
+    print('NOT FOCUSED  1-2-3-4-5-6-7-8-9-10    VERY FOCUSED')
+    print()
+    mental_state = input('How focused are you right now? ---> ')
     if mental_state in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
     else:
@@ -123,8 +127,9 @@ os.system('cls')
 
 # motivation level, 1 - not motivated, 10 - very motivated
 while True:
-    print('1 - NOT MOTIVATED, 10 - VERY MOTIVATED')
-    motivation = input('How motivated are you right now?')
+    print('NOT MOTIVATED  1-2-3-4-5-6-7-8-9-10    VERY MOTIVATED')
+    print()
+    motivation = input('How motivated are you right now? ---> ')
     if motivation in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
     else:
@@ -133,9 +138,12 @@ os.system('cls')
 
 # Ask for starting n and ensure it is a number
 while True:
-    n_input = input('Please enter starting number count: ')
+    n_input = print('Press ENTER to start digit span test with default complexity (4 digits) or enter a custom starting point for digit span test')
     if n_input.isdigit():
         n = int(n_input)
+        break
+    elif n_input == '':
+        n = 4
         break
     else:
         print("Please enter a valid number.")
@@ -144,10 +152,12 @@ os.system('cls')
 # Ask for sound model and ensure it is a valid option
 while True:
     print('Please enter sound model number:')
+    print()
     print('1. Kaarel')
     print('2. Pille')
     print('3. Bot')
-    sound_model = input('---> ')
+    print()
+    sound_model = input(' ---> ')
     if sound_model in {'1', '2', '3'}:
         break
     else:
@@ -163,12 +173,14 @@ os.system('cls')
 
 # ask for memory method, 1 - no method, 2 - memory palace
 while True:
-    print('Please choose memory method that you practiced today: ')
+    print('Please choose memory method that you practiced today.')
+    print()
     print('1. No method')
     print('2. Memory palace (visualization mnemonics)')
     print('3. Memory palace (name mnemonics)')
     print('4. Memory palace (connection mnemonics)')
-    memory_method = input('---> ')
+    print()
+    memory_method = input(' ---> ')
     if memory_method in {'1', '2', '3', '4'}:
         break
     else:
@@ -228,7 +240,7 @@ while status:
     # Ask user to repeat numbers
     print('Current number length is ' + str(current_loop_n) + ' numbers')
     print('Please repeat the numbers in one line')
-    user_number = str(input('--->'))
+    user_number = str(input(' ---> '))
     os.system('cls')
     
 
