@@ -6,6 +6,8 @@ import os
 import pandas as pd
 import keyboard
 
+a = 1
+
 # Set working directory
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -187,8 +189,9 @@ os.system('cls')
 # ask for wait time between numbers'
 if mode == '1':
     wait_time = float(input('Please enter wait time between numbers in seconds ---> '))
-elif mode == '2':
+elif mode == '2' or mode == '3':
     wait_time = 0
+
 os.system('cls')
 
 # ask for memory method, 1 - no method, 2 - memory palace
