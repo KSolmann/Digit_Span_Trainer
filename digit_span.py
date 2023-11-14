@@ -76,33 +76,40 @@ while True:
     print()
     print('1. Practice')
     print('2. Test')
+    print()
+    print('* enter a number *')
     mode = input('---> ')
     if mode in {'1', '2'}:
         break
     else:
         print("Please enter a valid option.")
+        os.system('cls')
 os.system('cls')
 
 # how comfortable is the environment, 1 - not comfortable, 10 - very comfortable
 while True:
-    print('NOT COMFORTABLE  1-2-3-4-5-6-7-8-9-10    VERY COMFORTABLE')
+    print('NOT COMFORTABLE  1--2--3--4--5--6--7--8--9--10    VERY COMFORTABLE')
     print()
+    print('* enter a number *')
     location = input('How comfortable is the environment right now? ---> ')
     if location in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
     else:
         print("Please enter a valid option.")
+        os.system('cls')
 os.system('cls')
 
 # tiredness level, 1 - not tired, 10 - tired
 while True:
-    print('NOT TIRED  1-2-3-4-5-6-7-8-9-10    VERY TIRED')
+    print('NOT TIRED  1--2--3--4--5--6--7--8--9--10    VERY TIRED')
     print()
-    tiredness = input('How tired are you right now?')
+    print('* enter a number *')
+    tiredness = input('How tired are you right now? ---> ')
     if tiredness in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
     else:
         print("Please enter a valid option.")
+        os.system('cls')
 os.system('cls')
 
 # physical activity minutes
@@ -112,42 +119,52 @@ while True:
         break
     else:
         print("Please enter a valid number.")
+        os.system('cls')
 os.system('cls')
 
 # mental state, 1 - not focused, 10- focused
 while True:
-    print('NOT FOCUSED  1-2-3-4-5-6-7-8-9-10    VERY FOCUSED')
+    print('NOT FOCUSED  1--2--3--4--5--6--7--8--9--10    VERY FOCUSED')
     print()
+    print('* enter a number *')
     mental_state = input('How focused are you right now? ---> ')
     if mental_state in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
     else:
         print("Please enter a valid option.")
+        os.system('cls')
 os.system('cls')
 
 # motivation level, 1 - not motivated, 10 - very motivated
 while True:
-    print('NOT MOTIVATED  1-2-3-4-5-6-7-8-9-10    VERY MOTIVATED')
+    print('NOT MOTIVATED  1--2--3--4--5--6--7--8--9--10    VERY MOTIVATED')
     print()
+    print('* enter a number *')
     motivation = input('How motivated are you right now? ---> ')
     if motivation in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}:
         break
     else:
         print("Please enter a valid option.")
+        os.system('cls')
 os.system('cls')
 
 # Ask for starting n and ensure it is a number
 while True:
-    n_input = print('Press ENTER to start digit span test with default complexity (4 digits) or enter a custom starting point for digit span test')
+    print('Please enter starting point for digit span test.')
+    print()
+    print('Press ENTER for default 3 digits')
+    n_input = input('...or enter a custom starting point for digit span test ---> ')
     if n_input.isdigit():
         n = int(n_input)
         break
     elif n_input == '':
-        n = 4
+        n = 3
         break
     else:
         print("Please enter a valid number.")
-os.system('cls')
+        os.system('cls')
+    os.system('cls')
+os.system('cls')    
 
 # Ask for sound model and ensure it is a valid option
 while True:
@@ -157,16 +174,18 @@ while True:
     print('2. Pille')
     print('3. Bot')
     print()
+    print('* enter a number *')
     sound_model = input(' ---> ')
     if sound_model in {'1', '2', '3'}:
         break
     else:
         print("Please enter a valid option.")
+        os.system('cls')
 os.system('cls')
 
 # ask for wait time between numbers'
 if mode == '1':
-    wait_time = float(input('Please enter wait time between numbers in seconds: '))
+    wait_time = float(input('Please enter wait time between numbers in seconds ---> '))
 elif mode == '2':
     wait_time = 0
 os.system('cls')
@@ -175,26 +194,36 @@ os.system('cls')
 while True:
     print('Please choose memory method that you practiced today.')
     print()
-    print('1. No method')
-    print('2. Memory palace (visualization mnemonics)')
-    print('3. Memory palace (name mnemonics)')
-    print('4. Memory palace (connection mnemonics)')
+    print('Examples: 4, 7, 10 or 6')
     print()
+    print('1. Repeating the audio')
+    print('2. Visualizing the digits')
+    print('3. Rhyming words with numbers to visualize images')
+    print('4. Translating number shape to images')
+    print('5. Phonetic number system to create images (1 digit at a time)')
+    print('6. Phonetic number system to create images (2 digits at a time)')
+    print('7. Method of Loci')
+    print('8. Using absurd connections')
+    print('9. Number chunking')
+    print('10. Using personal connections')
+    print('11. No method')
+    print()
+    print('* enter a number *')
     memory_method = input(' ---> ')
-    if memory_method in {'1', '2', '3', '4'}:
-        break
-    else:
-        print("Please enter a valid option.")
+    break
+
 os.system('cls')
 
 # Display game rules
 print('Rules:')
+print()
 print('1. You will hear a series of numbers')
-print('2. You have to repeat the numbers in the same order')
-print('3. If you repeat the numbers correctly, the series will get longer')
-print('4. If you make a mistake, the series will stay the length once. Additional mistakes will shorten the series by one')
+print('2. After hearing the full sequence of numbers, recall the full sequence in the same order')
+print('3. If you repeat the numbers correctly, the series will get longer by one digit')
+print('4. If you make a mistake the first time, the digit length will stay the same. Additional mistakes will shorten the series by one digit')
+print()
 print('________________________')
-print('Press enter to start')
+print('Press ENTER to start')
 input()
 os.system('cls')
 
@@ -203,13 +232,13 @@ if os.path.isfile('Logs/' + name + '_digit_span_log.csv'):
     df = pd.read_csv('Logs/' + name + '_digit_span_log.csv')
     session_nr = df['session_nr'].iloc[-1] + 1
 else:
-    df = pd.DataFrame(columns=['name', 'date', 'time', 'session_nr', 'loop_nr', 'numbers', 'user_number', 'outcome', 'mistakes_in_a_row',
-                               'time_taken', 'sound_model', 'length', 'session_time', 'wait_time', 'memory_method', 'tiredness',
+    df = pd.DataFrame(columns=['user_name', 'date', 'time', 'session_nr', 'loop_nr', 'presented_sequence', 'recalled_sequence', 'outcome', 'mistakes_in_a_row',
+                               'recall_time_in_s', 'sound_model', 'digit_length', 'session_time', 'time_between_digits', 'memory_method', 'tiredness',
                                'physical_activity', 'mental_state', 'motivation', 'location', 'session_mode'])
     session_nr = 1
     
 # start whole game timer
-start_time_game = time.time()
+total_time_start = time.time()
 
 # Game loop
 while status:
@@ -218,8 +247,8 @@ while status:
     
     # Generate list of numbers
     numbers_list = generate_numbers_list(n)
-    numbers_string = ''.join(str(number) for number in numbers_list)
-    numbers_string = str(numbers_string)
+    presented_sequence = ''.join(str(number) for number in numbers_list)
+    presented_sequence = str(presented_sequence)
 
     # Disable keyboard using import keyboard
     for i in range(150):
@@ -231,25 +260,27 @@ while status:
         time.sleep(wait_time)
 
     # Measure time
-    start_time = time.time()
+    loop_input_start_time = time.time()
 
     # Enable keyboard
     for i in range(150):
         keyboard.unblock_key(i)
     
     # Ask user to repeat numbers
-    print('Current number length is ' + str(current_loop_n) + ' numbers')
+    print('Current number length is ' + str(current_loop_n) + ' numbers.')
+    print()
     print('Please repeat the numbers in one line')
-    user_number = str(input(' ---> '))
+    print()
+    recalled_sequence = str(input(' ---> '))
     os.system('cls')
     
 
     # Stop time measurement
-    end_time = time.time()
-    time_taken = end_time - start_time
+    loop_input_end_time = time.time()
+    time_taken_loop_input = loop_input_end_time - loop_input_start_time
 
     # Check if user repeated numbers correctly
-    if user_number == numbers_string:
+    if recalled_sequence == presented_sequence:
         outcome = 'correct'
         print('Correct!')
         n += 1
@@ -262,12 +293,12 @@ while status:
             n -= 1
 
     # calculate total session time in hours, minutes and seconds
-    session_time = time.strftime("%H:%M:%S", time.gmtime(time.time() - start_time_game))
+    session_time = time.strftime("%H:%M:%S", time.gmtime(time.time() - total_time_start))
     
     # Compose data
-    data = {'name': name, 'date': current_date, 'time': time.strftime("%H:%M:%S"), 'session_nr': session_nr, 'loop_nr': loop_nr, 'numbers': numbers_string,
-            'user_number': str(user_number), 'outcome': outcome, 'mistakes_in_a_row': mistakes_in_a_row, 'time_taken': time_taken, 'sound_model': sound_model,
-            'length': current_loop_n, 'session_time': session_time, 'wait_time': wait_time, 'memory_method': memory_method, 'tiredness': tiredness,
+    data = {'user_name': name, 'date': current_date, 'time': time.strftime("%H:%M:%S"), 'session_nr': session_nr, 'loop_nr': loop_nr, 'presented_sequence': presented_sequence,
+            'recalled_sequence': recalled_sequence, 'outcome': outcome, 'mistakes_in_a_row': mistakes_in_a_row, 'recall_time_in_s': time_taken_loop_input, 'sound_model': sound_model,
+            'digit_length': current_loop_n, 'session_time': session_time, 'time_between_digits': wait_time, 'memory_method': memory_method, 'tiredness': tiredness,
             'physical_activity': physical_activity, 'mental_state': mental_state, 'location': location, 'motivation': motivation, 'session_mode': mode}
 
     # Add data to dataframe
@@ -275,23 +306,34 @@ while status:
     
     # print elapsed time in hours, miutes and seconds
     print('__________________________')
-    print('Time elapsed: ' + time.strftime("%H:%M:%S", time.gmtime(time.time() - start_time_game)))
+    print('Total time elapsed from start: ' + time.strftime("%H:%M:%S", time.gmtime(time.time() - total_time_start)))
     # print current loop number and length of series
-    print('Current round number is: ' + str(loop_nr))
-    print('Next number length: ' + str(n))
+    print()
+    print('Current round number: ' + str(loop_nr))
+    print('Next digit length: ' + str(n))
     print('__________________________')
 
     # Clear screen and wait for user input
-    user_input = input('Press ENTER to continue or type "quit" to quit and save your results to a csv file: ')
+    print('Press ENTER to continue')
+    print()
+    print()
+    print('...or type "quit" to quit and save your results to a csv file')
+    user_input = input(' ---> ')
     os.system('cls')
     if user_input.lower() == 'quit':
-        feedback = input('Please enter your feedback (0 for no feedback) --->')
+        print('Please summarize your experience!')
+        print()
+        print('(ENTER for skip)')
+        print()
+        feedback = input(' ---> ')
         # save feedback as a text file with session number, user name and date and time as object
-        if feedback != '0':
-            with open('Feedback/feedback_session_nr_' + str(session_nr) + '_' + name + '.txt', 'w') as f:
+        if feedback != '':
+            #generate datetime parameter yyyymmdd_hhmmss
+            feedback_datetime = time.strftime("%Y%m%d_%H%M%S")
+            with open('Feedback/feedback_' + name + '_' + str(feedback_datetime) + '.txt', 'w') as f:
                 f.write(feedback)
         status = False
         print('Thank you for playing!')
         # print elapsed time in hours, miutes and seconds
-        print('Total time elapsed: ' + time.strftime("%H:%M:%S", time.gmtime(time.time() - start_time_game)))
+        print('Total time elapsed: ' + time.strftime("%H:%M:%S", time.gmtime(time.time() - total_time_start)))
         df.to_csv('Logs/' + name + '_digit_span_log.csv', index=False)
